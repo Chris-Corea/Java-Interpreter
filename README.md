@@ -1,4 +1,4 @@
 Java-Interpreter
 ================
 
-A Java interpreter
+A commandline Java interpreter that mimics the behavior of the Python interpreter.
