@@ -1,3 +1,9 @@
+/*
+ * jInterp.java - Commandline Java Interpreter 
+ * 
+ * Author: Chris Corea
+ */
+
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -25,8 +31,7 @@ public class jInterp {
 
 	ClassLoader loader;
 
-	public static final String CLASSPATH = System
-			.getProperty("java.class.path");
+	public static final String CLASSPATH = System.getProperty("java.class.path");
 
 	public static void main(String[] args) {
 
@@ -42,7 +47,6 @@ public class jInterp {
 					myCompiler.tmpdir).toURI().toURL() },
 					ClassLoader.getSystemClassLoader());
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println("Could not set up interpreter environment.");
 		}
@@ -67,7 +71,6 @@ public class jInterp {
 						System.out.println("\nSyntax error!");
 					}
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				if (myCompiler.exec) {
@@ -100,7 +103,6 @@ public class jInterp {
 		} catch (InvocationTargetException e) {
 			System.err.println("Invocation target: " + e);
 		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -116,7 +118,7 @@ public class jInterp {
 	 * @param declaration
 	 *            flag to determine whether or not we should assume code is a
 	 *            declaration
-	 * @return
+	 * @return String containing Java code to be compiled
 	 */
 	public String javaFileTemplate(int num, String code, boolean declaration) {
 		String template = "";
